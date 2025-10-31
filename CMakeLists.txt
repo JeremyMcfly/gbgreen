@@ -9,6 +9,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin)
 
 # Source files (excluding tempCodeRunnerFile.c)
+include_directories(include)
 file(GLOB SOURCES "src/*.cpp")
 set(HEADERS "src/*.h" "src/*.hpp")
 set(RESOURCES "src/*.qrc" "src/*.ui")

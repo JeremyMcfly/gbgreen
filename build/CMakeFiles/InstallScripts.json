@@ -1,0 +1,8 @@
+{
+	"InstallScripts" : 
+	[
+		"C:/Users/greensci/Documents/GitHub/gbgreen/build/cmake_install.cmake",
+		"C:/Users/greensci/Documents/GitHub/gbgreen/build/vendored/SDL/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

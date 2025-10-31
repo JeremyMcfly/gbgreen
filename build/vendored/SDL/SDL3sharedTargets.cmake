@@ -7,7 +7,7 @@ if(CMAKE_VERSION VERSION_LESS "2.8.3")
    message(FATAL_ERROR "CMake >= 2.8.3 required")
 endif()
 cmake_policy(PUSH)
-cmake_policy(VERSION 2.8.3...3.29)
+cmake_policy(VERSION 2.8.3...3.31)
 #----------------------------------------------------------------
 # Generated CMake target import file.
 #----------------------------------------------------------------
@@ -52,7 +52,7 @@ add_library(SDL3::SDL3-shared SHARED IMPORTED)
 set_target_properties(SDL3::SDL3-shared PROPERTIES
   COMPATIBLE_INTERFACE_BOOL "SDL3_SHARED"
   COMPATIBLE_INTERFACE_STRING "SDL_VERSION"
-  INTERFACE_LINK_DEPENDS "C:/Users/greens/Documents/GitHub/gbgreen/vendored/SDL/src/dynapi/SDL_dynapi.sym"
+  INTERFACE_LINK_DEPENDS "C:/Users/greensci/Documents/GitHub/gbgreen/vendored/SDL/src/dynapi/SDL_dynapi.sym"
   INTERFACE_LINK_LIBRARIES "SDL3::Headers"
   INTERFACE_SDL3_SHARED "TRUE"
   INTERFACE_SDL_VERSION "SDL3"
@@ -61,29 +61,29 @@ set_target_properties(SDL3::SDL3-shared PROPERTIES
 # Import target "SDL3::SDL3-shared" for configuration "Debug"
 set_property(TARGET SDL3::SDL3-shared APPEND PROPERTY IMPORTED_CONFIGURATIONS DEBUG)
 set_target_properties(SDL3::SDL3-shared PROPERTIES
-  IMPORTED_IMPLIB_DEBUG "C:/Users/greens/Documents/GitHub/gbgreen/bin/lib/Debug/SDL3.lib"
-  IMPORTED_LOCATION_DEBUG "C:/Users/greens/Documents/GitHub/gbgreen/bin/Debug/SDL3.dll"
+  IMPORTED_IMPLIB_DEBUG "C:/Users/greensci/Documents/GitHub/gbgreen/bin/lib/Debug/SDL3.lib"
+  IMPORTED_LOCATION_DEBUG "C:/Users/greensci/Documents/GitHub/gbgreen/bin/Debug/SDL3.dll"
   )
 
 # Import target "SDL3::SDL3-shared" for configuration "Release"
 set_property(TARGET SDL3::SDL3-shared APPEND PROPERTY IMPORTED_CONFIGURATIONS RELEASE)
 set_target_properties(SDL3::SDL3-shared PROPERTIES
-  IMPORTED_IMPLIB_RELEASE "C:/Users/greens/Documents/GitHub/gbgreen/bin/lib/Release/SDL3.lib"
-  IMPORTED_LOCATION_RELEASE "C:/Users/greens/Documents/GitHub/gbgreen/bin/Release/SDL3.dll"
+  IMPORTED_IMPLIB_RELEASE "C:/Users/greensci/Documents/GitHub/gbgreen/bin/lib/Release/SDL3.lib"
+  IMPORTED_LOCATION_RELEASE "C:/Users/greensci/Documents/GitHub/gbgreen/bin/Release/SDL3.dll"
   )
 
 # Import target "SDL3::SDL3-shared" for configuration "MinSizeRel"
 set_property(TARGET SDL3::SDL3-shared APPEND PROPERTY IMPORTED_CONFIGURATIONS MINSIZEREL)
 set_target_properties(SDL3::SDL3-shared PROPERTIES
-  IMPORTED_IMPLIB_MINSIZEREL "C:/Users/greens/Documents/GitHub/gbgreen/bin/lib/MinSizeRel/SDL3.lib"
-  IMPORTED_LOCATION_MINSIZEREL "C:/Users/greens/Documents/GitHub/gbgreen/bin/MinSizeRel/SDL3.dll"
+  IMPORTED_IMPLIB_MINSIZEREL "C:/Users/greensci/Documents/GitHub/gbgreen/bin/lib/MinSizeRel/SDL3.lib"
+  IMPORTED_LOCATION_MINSIZEREL "C:/Users/greensci/Documents/GitHub/gbgreen/bin/MinSizeRel/SDL3.dll"
   )
 
 # Import target "SDL3::SDL3-shared" for configuration "RelWithDebInfo"
 set_property(TARGET SDL3::SDL3-shared APPEND PROPERTY IMPORTED_CONFIGURATIONS RELWITHDEBINFO)
 set_target_properties(SDL3::SDL3-shared PROPERTIES
-  IMPORTED_IMPLIB_RELWITHDEBINFO "C:/Users/greens/Documents/GitHub/gbgreen/bin/lib/RelWithDebInfo/SDL3.lib"
-  IMPORTED_LOCATION_RELWITHDEBINFO "C:/Users/greens/Documents/GitHub/gbgreen/bin/RelWithDebInfo/SDL3.dll"
+  IMPORTED_IMPLIB_RELWITHDEBINFO "C:/Users/greensci/Documents/GitHub/gbgreen/bin/lib/RelWithDebInfo/SDL3.lib"
+  IMPORTED_LOCATION_RELWITHDEBINFO "C:/Users/greensci/Documents/GitHub/gbgreen/bin/RelWithDebInfo/SDL3.dll"
   )
 
 # Make sure the targets which have been exported in some other

@@ -33,10 +33,14 @@
 
 /* #undef SDL_PLATFORM_PRIVATE */
 
+#ifdef SDL_PLATFORM_PRIVATE
+#include "SDL_begin_config_private.h"
+#endif
+
 /* #undef HAVE_GCC_ATOMICS */
 /* #undef HAVE_GCC_SYNC_LOCK_TEST_AND_SET */
 
-#define SDL_DISABLE_ALLOCA 1
+/* #undef SDL_DISABLE_ALLOCA */
 
 /* Useful headers */
 #define HAVE_FLOAT_H 1
@@ -176,6 +180,7 @@
 /* #undef HAVE_MEMFD_CREATE */
 /* #undef HAVE_POSIX_FALLOCATE */
 /* #undef HAVE_SIGACTION */
+/* #undef HAVE_SIGTIMEDWAIT */
 /* #undef HAVE_SA_SIGACTION */
 /* #undef HAVE_ST_MTIM */
 /* #undef HAVE_SETJMP */
@@ -194,7 +199,7 @@
 /* #undef HAVE_SEM_TIMEDWAIT */
 /* #undef HAVE_GETAUXVAL */
 /* #undef HAVE_ELF_AUX_INFO */
-/* #undef HAVE_POLL */
+/* #undef HAVE_PPOLL */
 #define HAVE__EXIT 1
 
 #endif /* HAVE_LIBC */
@@ -211,25 +216,29 @@
 /* #undef HAVE_LIBUDEV_H */
 /* #undef HAVE_LIBDECOR_H */
 /* #undef HAVE_LIBURING_H */
+/* #undef HAVE_FRIBIDI_H */
+/* #undef SDL_FRIBIDI_DYNAMIC */
 
 #define HAVE_DDRAW_H 1
 #define HAVE_DSOUND_H 1
 #define HAVE_DINPUT_H 1
 #define HAVE_XINPUT_H 1
 #define HAVE_WINDOWS_GAMING_INPUT_H 1
-/* #undef HAVE_GAMEINPUT_H */
+#define HAVE_GAMEINPUT_H 1
 #define HAVE_DXGI_H 1
+#define HAVE_DXGI1_5_H 1
 #define HAVE_DXGI1_6_H 1
 
 #define HAVE_MMDEVICEAPI_H 1
 #define HAVE_TPCSHRD_H 1
 #define HAVE_ROAPI_H 1
 #define HAVE_SHELLSCALINGAPI_H 1
-#define HAVE_SHOBJIDL_CORE_H 1
 
 /* #undef USE_POSIX_SPAWN */
 /* #undef HAVE_POSIX_SPAWN_FILE_ACTIONS_ADDCHDIR */
 /* #undef HAVE_POSIX_SPAWN_FILE_ACTIONS_ADDCHDIR_NP */
+
+/* #undef SDL_DISABLE_DLOPEN_NOTES */
 
 /* SDL internal assertion support */
 /* #undef SDL_DEFAULT_ASSERT_LEVEL_CONFIGURED */
@@ -277,6 +286,7 @@
 /* #undef SDL_AUDIO_DRIVER_PSP */
 /* #undef SDL_AUDIO_DRIVER_PS2 */
 /* #undef SDL_AUDIO_DRIVER_N3DS */
+/* #undef SDL_AUDIO_DRIVER_NGAGE */
 /* #undef SDL_AUDIO_DRIVER_QNX */
 
 /* #undef SDL_AUDIO_DRIVER_PRIVATE */
@@ -291,7 +301,7 @@
 #define SDL_JOYSTICK_DINPUT 1
 /* #undef SDL_JOYSTICK_DUMMY */
 /* #undef SDL_JOYSTICK_EMSCRIPTEN */
-/* #undef SDL_JOYSTICK_GAMEINPUT */
+#define SDL_JOYSTICK_GAMEINPUT 1
 /* #undef SDL_JOYSTICK_HAIKU */
 #define SDL_JOYSTICK_HIDAPI 1
 /* #undef SDL_JOYSTICK_IOKIT */
@@ -365,6 +375,9 @@
 /* #undef SDL_TIME_PSP */
 /* #undef SDL_TIME_PS2 */
 /* #undef SDL_TIME_N3DS */
+/* #undef SDL_TIME_NGAGE */
+
+/* #undef SDL_TIME_PRIVATE */
 
 /* Enable various timer systems */
 /* #undef SDL_TIMER_HAIKU */
@@ -387,6 +400,7 @@
 /* #undef SDL_VIDEO_DRIVER_KMSDRM_DYNAMIC */
 /* #undef SDL_VIDEO_DRIVER_KMSDRM_DYNAMIC_GBM */
 /* #undef SDL_VIDEO_DRIVER_N3DS */
+/* #undef SDL_VIDEO_DRIVER_NGAGE */
 #define SDL_VIDEO_DRIVER_OFFSCREEN 1
 /* #undef SDL_VIDEO_DRIVER_PS2 */
 /* #undef SDL_VIDEO_DRIVER_PSP */
@@ -414,13 +428,15 @@
 /* #undef SDL_VIDEO_DRIVER_X11_DYNAMIC_XRANDR */
 /* #undef SDL_VIDEO_DRIVER_X11_DYNAMIC_XSS */
 /* #undef SDL_VIDEO_DRIVER_X11_DYNAMIC_XTEST */
-/* #undef SDL_VIDEO_DRIVER_X11_HAS_XKBLOOKUPKEYSYM */
+/* #undef SDL_VIDEO_DRIVER_X11_HAS_XKBLIB */
 /* #undef SDL_VIDEO_DRIVER_X11_SUPPORTS_GENERIC_EVENTS */
 /* #undef SDL_VIDEO_DRIVER_X11_XCURSOR */
 /* #undef SDL_VIDEO_DRIVER_X11_XDBE */
 /* #undef SDL_VIDEO_DRIVER_X11_XFIXES */
 /* #undef SDL_VIDEO_DRIVER_X11_XINPUT2 */
 /* #undef SDL_VIDEO_DRIVER_X11_XINPUT2_SUPPORTS_MULTITOUCH */
+/* #undef SDL_VIDEO_DRIVER_X11_XINPUT2_SUPPORTS_SCROLLINFO */
+/* #undef SDL_VIDEO_DRIVER_X11_XINPUT2_SUPPORTS_GESTURE */
 /* #undef SDL_VIDEO_DRIVER_X11_XRANDR */
 /* #undef SDL_VIDEO_DRIVER_X11_XSCRNSAVER */
 /* #undef SDL_VIDEO_DRIVER_X11_XSHAPE */
@@ -438,6 +454,7 @@
 #define SDL_VIDEO_RENDER_VULKAN 1
 #define SDL_VIDEO_RENDER_OGL 1
 #define SDL_VIDEO_RENDER_OGL_ES2 1
+/* #undef SDL_VIDEO_RENDER_NGAGE */
 /* #undef SDL_VIDEO_RENDER_PS2 */
 /* #undef SDL_VIDEO_RENDER_PSP */
 /* #undef SDL_VIDEO_RENDER_VITA_GXM */
@@ -462,10 +479,12 @@
 /* #undef SDL_VIDEO_METAL */
 
 /* Enable GPU support */
-#define SDL_GPU_D3D11 1
+/* #undef SDL_GPU_D3D11 */
 #define SDL_GPU_D3D12 1
 #define SDL_GPU_VULKAN 1
 /* #undef SDL_GPU_METAL */
+
+/* #undef SDL_GPU_PRIVATE */
 
 /* Enable system power support */
 /* #undef SDL_POWER_ANDROID */
@@ -501,6 +520,8 @@
 /* Enable system storage support */
 #define SDL_STORAGE_STEAM 1
 
+/* #undef SDL_STORAGE_PRIVATE */
+
 /* Enable system FSops support */
 /* #undef SDL_FSOPS_POSIX */
 #define SDL_FSOPS_WINDOWS 1
@@ -525,6 +546,9 @@
 /* Enable dialog subsystem */
 /* #undef SDL_DIALOG_DUMMY */
 
+/* Enable tray subsystem */
+/* #undef SDL_TRAY_DUMMY */
+
 /* Enable assembly routines */
 /* #undef SDL_ALTIVEC_BLITTERS */
 
@@ -543,6 +567,11 @@
 /* #undef SDL_VIDEO_VITA_PIB */
 /* #undef SDL_VIDEO_VITA_PVR */
 /* #undef SDL_VIDEO_VITA_PVR_OGL */
+
+/* xkbcommon version info */
+#define SDL_XKBCOMMON_VERSION_MAJOR 
+#define SDL_XKBCOMMON_VERSION_MINOR 
+#define SDL_XKBCOMMON_VERSION_PATCH 
 
 /* Libdecor version info */
 #define SDL_LIBDECOR_VERSION_MAJOR 

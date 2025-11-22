@@ -17,7 +17,7 @@ void PPU::ppu_init() {
 
 }
 void PPU::ppu_tick() {
-
+    printf("tony \n");
 }
 
 PPU::Tile PPU::getTile(uint8_t tileIndex) {
